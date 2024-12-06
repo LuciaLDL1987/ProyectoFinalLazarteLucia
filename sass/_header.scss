@@ -1,0 +1,112 @@
+$color-fondo: #eae5dc;
+$color-texto: #007ffb;
+$color-hover: #595959;
+$color-hover-texto:#eae5dc;
+
+$padding-general: 10px 20px;
+$font-family-general: sans-serif;
+$menu-breakpoint: 768px;
+$menu-small-breakpoint: 480px;
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding-general;
+  background-color: $color-fondo;
+  color: $color-texto;
+  font-family: $font-family-general;
+  box-sizing: border-box;
+}
+
+.logocaju{
+  height: 60px;
+}
+
+.bienvenida{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $color-texto;
+    text-align: center;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+
+  ul{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+
+    li{
+      a{
+        color: $color-texto;
+        text-decoration: none;
+        padding: 8px 15px;
+        transition: background-color 0.3s, color 0.3s ease;
+
+        &:hover{
+          background-color: $color-hover;
+          color: $color-hover-texto;
+        }
+      }
+    }
+  }
+
+  .menu-icon{
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  #menu-toogle{
+    display: none;
+  }
+  #menu-toogle:checked + .menu-icon + ul{
+    display: flex;
+  }
+}
+
+@media (max-width: $menu-breakpoint){
+  nav{
+    ul{
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background-color: $color-fondo;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 10px;
+      box-shadow:  0px 4px 6px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+    .menu-icon{
+      display: block;
+    }
+  }
+}
+
+@media (max-width: $menu-small-breakpoint){
+  header{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .logocaju{
+      height: 50px;
+    }
+    .bienvenida{
+      font-size: 0.9rem;
+    }
+  }
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+  font-family: sans-serif;
+}

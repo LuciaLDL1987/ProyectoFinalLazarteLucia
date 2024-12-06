@@ -1,0 +1,13 @@
+@mixin footer_style($fondo-color, $texto-color, $padding: 5px, $width: 99%){
+    background-color: $fondo-color;
+    color: $texto-color;
+    text-align: center;
+    padding: $padding;
+    position: relative;
+    bottom: 0;
+    width: $width;
+}
+
+footer{
+    @include footer_style(#007ffb, #eae5dc,)
+}

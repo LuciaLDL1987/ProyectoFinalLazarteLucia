@@ -1,0 +1,50 @@
+.articulo-general{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+}
+
+.article-card{
+    display: flex;
+    align-items: center;
+    background-color: #f5f7fa;
+    border-radius: 12px;
+    padding: 16px;
+    gap: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+
+    &:hover{
+        transform: scale(1.02);
+    }
+
+    @media (max-width:768px){
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.article-image{
+    width: 50%;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+.article-content{
+    flex: 1;
+    color: #0a1433;
+}
+
+.article-content h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.4;
+}
+

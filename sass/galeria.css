@@ -1,0 +1,150 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #eae5dc;
+  color: #007ffb;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.logocaju {
+  height: 60px;
+}
+
+.bienvenida {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007ffb;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  color: #007ffb;
+  text-decoration: none;
+  padding: 8px 15px;
+  transition: background-color 0.3s, color 0.3s ease;
+}
+nav ul li a:hover {
+  background-color: #595959;
+  color: #eae5dc;
+}
+nav .menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+nav #menu-toogle {
+  display: none;
+}
+nav #menu-toogle:checked + .menu-icon + ul {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #eae5dc;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  nav .menu-icon {
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  header .logocaju {
+    height: 50px;
+  }
+  header .bienvenida {
+    font-size: 0.9rem;
+  }
+}
+main {
+  padding: 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+main .gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+main .gallery .section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .gallery .section img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+main .gallery .section img:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  main .gallery {
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
+@media (max-width: 480px) {
+  main .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+footer {
+  background-color: #007ffb;
+  color: #eae5dc;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  bottom: 0;
+  width: 99%;
+}
+
+/*# sourceMappingURL=galeria.css.map */

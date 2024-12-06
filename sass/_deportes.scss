@@ -1,0 +1,137 @@
+$card-width: 200px;
+$card-height: 200px;
+$card-margin: 60px;
+$front-back-color: rgba(0, 0, 0, 0.4);
+$back-background: #007ffb;
+$shadow-color: #000;
+$front-text-color: #eae5dc;
+$back-text-color: #eae5dc;
+$perspective-value: 1000px;
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+  .cards-tarjeta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: $card-margin;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+
+.card {
+  position: relative;
+  width: $card-width;
+  height: $card-height;
+  perspective: $perspective-value;
+
+  .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.6s ease;
+  }
+
+  .front {
+    transform: rotateY(0deg);
+    box-shadow: 0 5px 10px $shadow-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h3 {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 45px;
+      line-height: 45px;
+      color: $front-text-color;
+      background: $front-back-color;
+      text-align: center;
+      font-size: 1rem;
+      padding: 0 5px;
+      z-index: 2;
+    }
+  }
+
+  .back {
+    transform: rotateY(180deg);
+    background-color: $back-background;
+    padding: 15px;
+    color: $back-text-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px $shadow-color;
+
+    .link {
+      border-top: solid 1px $front-text-color;
+      height: 50px;
+      line-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .a {
+        color: #eae5dc;
+        text-decoration: none;
+      }
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin-top: 10px;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    p {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+        margin: 5px 0;
+        overflow: hidden;
+    }
+  }
+
+  &:hover {
+    .front {
+      transform: rotateY(180deg); 
+    }
+
+    .back {
+      transform: rotateY(360deg); 
+    }
+  }
+}
+
+@media (max-with: 768px){
+  .card{
+    width: calc(50% - #{$card-margin});
+    }
+  }
+
+  @media (max-widh: 480px){
+    .card{
+      width: calc(100% - #{$card-margin});
+    }
+  }

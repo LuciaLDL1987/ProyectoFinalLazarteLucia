@@ -1,0 +1,244 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #eae5dc;
+  color: #007ffb;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.logocaju {
+  height: 60px;
+}
+
+.bienvenida {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007ffb;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  color: #007ffb;
+  text-decoration: none;
+  padding: 8px 15px;
+  transition: background-color 0.3s, color 0.3s ease;
+}
+nav ul li a:hover {
+  background-color: #595959;
+  color: #eae5dc;
+}
+nav .menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+nav #menu-toogle {
+  display: none;
+}
+nav #menu-toogle:checked + .menu-icon + ul {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #eae5dc;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  nav .menu-icon {
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  header .logocaju {
+    height: 50px;
+  }
+  header .bienvenida {
+    font-size: 0.9rem;
+  }
+}
+main {
+  padding: 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding-top: 20px;
+}
+
+.carousel {
+  display: flex;
+  overflow: auto;
+  width: 80%;
+  scroll-snap-type: x mandatory;
+}
+
+.contenedor {
+  min-width: 280px;
+  margin: 0 10px;
+  box-shadow: 0 10px 20px #000;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  font-family: sans-serif;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  scroll-snap-align: center;
+}
+.contenedor:hover {
+  transform: scale(1.05);
+}
+
+.shape {
+  background-color: #007ffb;
+  height: 230px;
+  width: 380px;
+  margin-left: -20px;
+  position: relative;
+  top: -80px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0);
+  transform: rotate(25deg);
+}
+
+.imagenes-enfrentadas {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+  top: 130px;
+  transform: rotate(-25deg);
+}
+
+.imagen1, .imagen2 {
+  height: 90px;
+  width: 90px;
+  background-size: cover;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 2px 15px rgb(58, 54, 54);
+  margin: 0 auto;
+}
+
+.titulo {
+  font-size: 15px;
+  padding-bottom: 12px;
+  color: #007ffb;
+  margin-top: 20px;
+}
+
+h3 {
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
+p {
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 2;
+  color: rgb(105, 100, 109);
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .contenedor {
+    min-width: 230px;
+  }
+  .shape {
+    height: 180px;
+    width: 280px;
+  }
+  .imagenes-enfrentadas {
+    top: 100px;
+  }
+  .imagen1 .imagen2 {
+    height: 80px;
+    width: 80px;
+  }
+  .titulo {
+    font-size: 13px;
+  }
+  p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 480px) {
+  .contenedor {
+    min-width: 180px;
+  }
+  .shape {
+    height: 130px;
+    width: 230px;
+  }
+  .imagenes-enfrentadas {
+    top: 80px;
+  }
+  .imagen1 .imagen2 {
+    height: 60px;
+    width: 60px;
+  }
+  .titulo {
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+footer {
+  background-color: #007ffb;
+  color: #eae5dc;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  bottom: 0;
+  width: 99%;
+}
+
+/*# sourceMappingURL=schedule.css.map */
